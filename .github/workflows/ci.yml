@@ -34,9 +34,6 @@ jobs:
   backend:
     name: Backend
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: vehicle-system
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,7 +44,7 @@ jobs:
           distribution: temurin
           java-version: 17
           cache: maven
-          cache-dependency-path: vehicle-system/pom.xml
+          cache-dependency-path: pom.xml
 
       - name: Test
         run: chmod +x mvnw && ./mvnw -B test
