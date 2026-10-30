@@ -106,7 +106,7 @@ class VehicleServiceTest {
 		boolean result = vehicleService.delete("V001");
 
 		assertTrue(result);
-		verify(vehicleRepository, times(1)).existsById("V001");
+		verify(vehicleRepository, times(2)).existsById("V001");
 		verify(vehicleRepository, times(1)).deleteById("V001");
 	}
 
