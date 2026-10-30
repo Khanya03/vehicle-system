@@ -1,10 +1,18 @@
 package za.ac.cput.vehiclesystem.domain;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.persistence.*;
 
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(use = JsonTypeInfo.Id.DEDUCTION)
+@JsonSubTypes({
+        @JsonSubTypes.Type(Car.class),
+        @JsonSubTypes.Type(Truck.class),
+        @JsonSubTypes.Type(Motorcycle.class)
+})
 public abstract class Vehicle {
     
     @Id
