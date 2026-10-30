@@ -31,3 +31,17 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### OS ###
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### Editor ###
+*.swp
+*.swo
+*~
+out/
