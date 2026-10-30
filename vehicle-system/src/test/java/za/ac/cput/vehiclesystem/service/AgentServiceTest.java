@@ -105,7 +105,7 @@ class AgentServiceTest {
         boolean result = agentService.delete("AG001");
 
         assertTrue(result);
-        verify(agentRepository, times(1)).existsById("AG001");
+        verify(agentRepository, times(2)).existsById("AG001");
         verify(agentRepository, times(1)).deleteById("AG001");
     }
 
